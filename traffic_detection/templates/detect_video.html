@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from easetemplate.com/free-website-templates/stock-broker/blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2020 02:55:08 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description"
+          content="Stock Broker  - provide the easy responsive free website templates. You can easily customize and make your own website for your startup business.">
+    <meta name="keywords"
+          content="bootstrap template, Responsive Template, Website Template, free website templates, free website template download ">
+    <title>Traffic detection | Detect Image </title>
+    {% load static %}
+    {% include "library_css.html" %}
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="animsition">
+<div class="page-header">
+    {% include "header.html" %}
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <a class="logo" href="./"><img src="{% static 'images/logooo1234.png' %}" alt=""></a>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div id="navigation" class="navigation">
+                        <ul class="pull-right">
+                            <li class="active"><a href="./" title="Home" class="animsition-link">Home</a></li>
+                            <li><a title="Service" class="animsition-link">Service List</a>
+                                <ul>
+                                    <li><a href="/image-page" title="Detect Images">Detect Image</a></li>
+                                    <li><a href="/video-page" title="Detect Videos">Detect Video</a></li>
+                                    <li><a href="service-detaill.html" title="Label Processing">Label Processing</a>
+                                    </li>
+                                    <li><a href="/webcam-page" title="Camera Detection">Camera Detection</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="contact-us.html" title="Contact Us" class="animsition-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.navigation -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center col-xs-12">
+                <div class="page-caption">
+                    <h1 class="page-title">Detect Images</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.page header -->
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <form class="action" enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                {{ form }}
+            </form>
+            <div id="loading-custom-animation" class="loading-div loading-blink">
+                <div id="drag-and-drop-zone" class="dm-uploader p-5">
+                    <div class="box__input">
+                        <svg class="box__icon" xmlns="http://www.w3.org/2000/svg" width="50" height="43"
+                             viewBox="0 0 50 43">
+                            <path d="M48.4 26.5c-.9 0-1.7.7-1.7 1.7v11.6h-43.3v-11.6c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v13.2c0 .9.7 1.7 1.7 1.7h46.7c.9 0 1.7-.7 1.7-1.7v-13.2c0-1-.7-1.7-1.7-1.7zm-24.5 6.1c.3.3.8.5 1.2.5.4 0 .9-.2 1.2-.5l10-11.6c.7-.7.7-1.7 0-2.4s-1.7-.7-2.4 0l-7.1 8.3v-25.3c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v25.3l-7.1-8.3c-.7-.7-1.7-.7-2.4 0s-.7 1.7 0 2.4l10 11.6z"></path>
+                        </svg>
+                        <label><strong>Choose a file</strong><span
+                                class="box__dragndrop"> or drag it here</span>.</label>
+                    </div>
+                </div>
+                <img src="" class="initial-image">
+            </div>
+            <video id="box__video" class="box__video" width="1065px" height="550px" controls>
+                <source src="" id="video_here">
+            </video>
+            {{ room_name|json_script:"room-name" }}
+            <div class="col-md-12">
+                <div class="content-area">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="post-holder mb40">
+                                <!-- post holder -->
+
+                                <div class="post-block pinside30 outline">
+
+                                    <a id="singlebutton1" name="singlebutton" class="btn btn-outline btn-refresh">Refresh</a>
+                                    <a id="singlebutton" name="singlebutton" class="btn btn-outline">Upload Video</a>
+
+                                </div>
+                                <!-- /.post holder -->
+                                <div class="row">
+                                    <div class="leave-comments outline pinside30 col-md-4">
+                                        <a class="btn btn-primary has-ripple" id="bnt-detect">Detect objects by
+                                            YoloV4</a>
+                                    </div>
+                                    <div class="leave-comments outline pinside30 col-md-8">
+                                        <div class="dataTables_scroll">
+                                            <label><b>Time: </b></label>
+                                            <textarea class="txtareaTime" name="txtareaTime"> At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+											 	</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- /.leave comments -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% include "footer.html" %}
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+{% include "library_js.html" %}
+<script src="{% static 'js/detect_video.js' %}" type="text/javascript"></script>
+
+</body>
+
+
+<!-- Mirrored from easetemplate.com/free-website-templates/stock-broker/blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Jun 2020 02:55:12 GMT -->
+</html>
